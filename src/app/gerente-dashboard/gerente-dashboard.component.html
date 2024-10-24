@@ -1,0 +1,80 @@
+<h2>Gestión de Empleados, Clientes y Platos - Gerente</h2>
+
+<!-- Botones para gestionar empleados, clientes y platos -->
+<div class="botones-gestion">
+  <button (click)="mostrarEmpleados()">Mostrar Empleados</button>
+  <button (click)="mostrarClientes()">Mostrar Clientes</button>
+  <button (click)="irAGestionPlatos()">Agregar Plato</button>
+</div>
+
+
+<!-- Mostrar Clientes -->
+<div *ngIf="clientes.length > 0 && mostrarClientesFlag" class="lista-clientes">
+  <h3>Lista de Clientes</h3>
+  <ul>
+    <li *ngFor="let cliente of clientes">
+      {{'El cliente con ID: ' + cliente.id }} - {{ cliente.nombre }} - {{ cliente.telefono }}
+    </li>
+  </ul>
+</div>
+
+<!-- Si no hay clientes registrados, mostrar un mensaje -->
+<div *ngIf="clientes.length === 0 && mostrarClientesFlag">
+  <p>No hay clientes registrados.</p>
+</div>
+
+
+<h2>Gestión de Empleados</h2>
+
+<!-- Botón para mostrar empleados y formulario -->
+<!-- <button (click)="mostrarEmpleados()">Mostrar Empleados</button> -->
+
+
+<!-- Sección para mostrar la lista de empleados y el formulario de agregar empleados -->
+<div *ngIf="mostrarEmpleadosFlag">
+  <!-- Formulario para agregar empleados -->
+  <h3>Agregar Nuevo Empleado</h3>
+  <form (ngSubmit)="agregarEmpleado()" class="form-container">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nuevoEmpleado.nombre" name="nombre" required>
+    
+    
+    <div>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" [(ngModel)]="nuevoEmpleado.contrasena" name="contrasena" required>
+    </div>
+    
+    <div class="button-container">
+      <button class="nero" type="submit">Agregar Empleado</button>
+    </div>
+  </form>
+
+  <!-- Lista de empleados -->
+  <h3>Lista de Empleados</h3>
+    <ul>
+      <li *ngFor="let empleado of empleados">
+        {{ empleado.nombre }} (ID: {{ empleado.id }}) - {{ empleado.contrasena }}
+        
+        <span *ngIf="empleado.habilitado" style="color: rgb(94, 255, 0);">Habilitado</span>
+        <span *ngIf="!empleado.habilitado "style="color: red;">Deshabilitado</span>
+        <button (click)="deshabilitarEmpleado(empleado.id)" *ngIf="empleado.habilitado">Deshabilitar</button>
+        <button  class="botdisponible"(click)="habilitarEmpleado(empleado.id)" *ngIf="!empleado.habilitado">Habilitar empleado</button>
+        
+      </li>
+  </ul>
+  
+  <h3>Deshabilitar Empleado</h3>
+  <div *ngIf="empleados.length > 0" class="deshabilitar-empleado">
+    <label for="empleadoSelect">Seleccionar Empleado:</label>
+    <select id="empleadoSelect" [(ngModel)]="empleadoSeleccionado">
+      <option *ngFor="let empleado of empleados" [value]="empleado.id">
+        {{ empleado.nombre }}
+      </option>
+    </select>
+    <button type="submit" (click)="empleadoSeleccionado ? deshabilitarEmpleado(empleadoSeleccionado) : null">
+      Deshabilitar Empleado
+    </button>
+  </div>
+  <h2>Inicio de Sesión Gerente</h2>
+ 
+</div>

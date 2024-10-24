@@ -1,0 +1,126 @@
+<!--
+<h2>Registro de Cliente</h2>
+<form (ngSubmit)="registrar()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required />
+
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" required />
+
+  <label for="telefono">Teléfono:</label>
+  <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono" required />
+
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required />
+
+  <button type="submit">Registrar</button>
+</form>
+
+<hr />
+
+<h2>Inicio de Sesión - Cliente</h2>
+<form (ngSubmit)="iniciarSesion()">
+  <label for="idLogin">ID:</label>
+  <input type="text" id="idLogin" [(ngModel)]="idLogin" name="idLogin" required />
+
+  <label for="contrasenaLogin">Contraseña:</label>
+  <input type="password" id="contrasenaLogin" [(ngModel)]="contrasenaLogin" name="contrasenaLogin" required />
+
+  <button type="submit">Iniciar Sesión</button>
+</form>
+-->
+
+<!-- Grupo de botones para alternar entre "Registrarse" e "Iniciar sesión" -->
+<div class="button-group">
+  <!-- Botón para mostrar el formulario de registro -->
+  <button (click)="mostrarFormulario('registro')" [class.active]="formActivo === 'registro'" class="toggle-btn">
+    Registrarse
+  </button>
+  <!-- Botón para mostrar el formulario de inicio de sesión -->
+  <button (click)="mostrarFormulario('login')" [class.active]="formActivo === 'login'" class="toggle-btn">
+    Iniciar Sesión
+  </button>
+</div>
+
+<!-- Formulario de Registro -->
+<form *ngIf="formActivo === 'registro'" #formRegistro="ngForm" (ngSubmit)="registrar()" class="form-container">
+  <!-- Título del formulario de registro -->
+  <h2>Registro de Cliente</h2>
+
+  <!-- Grupo para el campo "Nombre" -->
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <!-- Campo de texto para el nombre del cliente -->
+    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required #nombreModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "Nombre" no es válido y ha sido tocado -->
+    <div *ngIf="nombreModel.invalid && nombreModel.touched" class="error">El nombre es obligatorio</div>
+  </div>
+
+  <!-- Grupo para el campo "Dirección" -->
+  <div class="form-group">
+    <label for="direccion">Dirección:</label>
+    <!-- Campo de texto para la dirección -->
+    <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" required #direccionModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "Dirección" no es válido y ha sido tocado -->
+    <div *ngIf="direccionModel.invalid && direccionModel.touched" class="error">La dirección es obligatoria</div>
+  </div>
+
+  <!-- Grupo para el campo "Teléfono" -->
+  <div class="form-group">
+    <label for="telefono">Teléfono:</label>
+    <!-- Campo de texto para el número de teléfono, con validación para que tenga 10 dígitos -->
+    <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono" required pattern="^[0-9]{10}$" #telefonoModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "Teléfono" no es válido y ha sido tocado -->
+    <div *ngIf="telefonoModel.invalid && telefonoModel.touched" class="error">El teléfono debe tener 10 dígitos</div>
+  </div>
+
+  <!-- Grupo para el campo "Contraseña" -->
+  <div class="form-group">
+    <label for="contrasena">Contraseña:</label>
+    <!-- Campo de texto para la contraseña -->
+    <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required #contrasenaModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "Contraseña" no es válido y ha sido tocado -->
+    <div *ngIf="contrasenaModel.invalid && contrasenaModel.touched" class="error">La contraseña es obligatoria</div>
+  </div>
+
+  <!-- Grupo para confirmar la contraseña -->
+  <div class="form-group">
+    <label for="confirmarContrasena">Confirmar Contraseña:</label>
+    <!-- Campo de texto para confirmar la contraseña -->
+    <input type="password" id="confirmarContrasena" [(ngModel)]="confirmarContrasena" name="confirmarContrasena" required #confirmarContrasenaModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si las contraseñas no coinciden y el campo ha sido tocado -->
+    <div *ngIf="contrasena !== confirmarContrasena && confirmarContrasenaModel.touched" class="error">Las contraseñas no coinciden</div>
+  </div>
+
+  <!-- Botón para registrar al cliente -->
+  <button type="submit" [disabled]="formRegistro.invalid" class="btn">Registrar</button>
+</form>
+
+<hr />
+
+<!-- Formulario de Inicio de Sesión -->
+<form *ngIf="formActivo === 'login'" #formLogin="ngForm" (ngSubmit)="iniciarSesion()" class="form-container">
+  <!-- Título del formulario de inicio de sesión -->
+  <h2>Inicio de Sesión - Cliente</h2>
+
+  <!-- Grupo para el campo "ID" -->
+  <div class="form-group">
+    <label for="idLogin">ID:</label>
+    <!-- Campo de texto para el ID de inicio de sesión -->
+    <input type="text" id="idLogin" [(ngModel)]="idLogin" name="idLogin" required #idLoginModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "ID" no es válido y ha sido tocado -->
+    <div *ngIf="idLoginModel.invalid && idLoginModel.touched" class="error">El ID es obligatorio</div>
+  </div>
+
+  <!-- Grupo para el campo "Contraseña" -->
+  <div class="form-group">
+    <label for="contrasenaLogin">Contraseña:</label>
+    <!-- Campo de texto para la contraseña de inicio de sesión -->
+    <input type="password" id="contrasenaLogin" [(ngModel)]="contrasenaLogin" name="contrasenaLogin" required #contrasenaLoginModel="ngModel" class="form-control" />
+    <!-- Mensaje de error si el campo "Contraseña" no es válido y ha sido tocado -->
+    <div *ngIf="contrasenaLoginModel.invalid && contrasenaLoginModel.touched" class="error">La contraseña es obligatoria</div>
+  </div>
+
+  <!-- Botón para iniciar sesión -->
+  <button type="submit" [disabled]="formLogin.invalid" class="btn">Iniciar Sesión</button>
+</form>

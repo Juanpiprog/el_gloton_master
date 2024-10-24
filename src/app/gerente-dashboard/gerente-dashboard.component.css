@@ -1,0 +1,32 @@
+.botdisponible{
+    padding: 10px;
+    background-color: #21cc0a; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    justify-content: center;    /* Centra los botones horizontalmente */
+  }
+  
+  .botdisponible:hover {
+    background-color: #1da80a; /* Color más oscuro al pasar el mouse */
+  }
+
+  ul {
+    list-style-type: none; /* Elimina los bullets de la lista */
+    padding: 0;
+  }
+  
+  li {
+    /*background-color: #f5f5f5;*/
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  

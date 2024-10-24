@@ -1,0 +1,38 @@
+<!-- Información del cliente logueado en la parte superior -->
+<div *ngIf="nombreCliente && idCliente" class="cliente-info">
+  <p>Bienvenido, {{ nombreCliente }} (ID: {{ idCliente }})</p>
+  <button (click)="cerrarSesion()">Cerrar sesión</button>
+</div>
+
+<h2>Menú de Platos Disponibles</h2>
+
+<!-- Lista de platos disponibles -->
+<div *ngIf="platosDisponibles.length > 0" class="menu-container">
+  <div class="plato-card" *ngFor="let plato of platosDisponibles">
+    <img [src]="plato.imagen" alt="{{ plato.nombre }}" class="plato-imagen" />
+    <div class="plato-info">
+      <h3 class="plato-nombre">{{ plato.nombre }}</h3>
+      <p class="plato-descripcion">{{ plato.descripcion }}</p>
+      <p class="plato-precio">${{ plato.precio }}</p>
+      <button (click)="hacerPedido(plato)">Agregar al Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje si no hay platos disponibles -->
+<div *ngIf="platosDisponibles.length === 0">
+  <p>No hay platos disponibles en este momento.</p>
+</div>
+
+<!-- Botón para confirmar el pedido -->
+<button (click)="confirmarPedido()" *ngIf="platosSeleccionados.length > 0">
+  Confirmar Pedido
+</button>
+
+<!-- Mostrar platos seleccionados -->
+<div *ngIf="platosSeleccionados.length > 0">
+  <h3>Platos Seleccionados:</h3>
+  <ul>
+    <li *ngFor="let plato of platosSeleccionados">{{ plato.nombre }} - ${{ plato.precio }}</li>
+  </ul>
+</div>

@@ -1,0 +1,31 @@
+
+<!--
+<h2>Inicio de Sesión - Empleado</h2>
+<form (ngSubmit)="iniciarSesion()">
+  <label for="codigo">ID:</label>
+  <input type="text" id="codigo" [(ngModel)]="codigo" name="codigo" required>
+
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required>
+
+  <button type="submit">Iniciar Sesión</button>
+</form>
+-->
+<h2>Inicio de Sesión - Empleado</h2>
+<form (ngSubmit)="iniciarSesion()" #formEmpleado="ngForm">
+  <div>
+    <label for="codigo">Código de Empleado:</label>
+    <input type="text" placeholder="Código de Empleado:" id="codigo" [(ngModel)]="codigo" name="codigo" required>
+  </div>
+  
+  
+  <div>
+    <label for="contrasena">Contraseña:</label>
+    <input type="password"placeholder="contraseña" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required>
+  </div>
+
+    <button type="submit">Iniciar Sesión</button>
+
+</form>
+
+

@@ -1,0 +1,77 @@
+
+  
+  <main>
+    <!-- Aquí va el contenido principal de la página -->
+    <p>Contenido de ejemplo debajo de la barra de navegación fija.</p>
+  </main>
+  <h1 style="text-align: center; font-family: cursive;">
+    Restaurante El Glotón
+  </h1>
+  s
+  <header >
+    <h1 style="text-align: center; font-family: cursive;">
+      Restaurante El Glotón
+    </h1>
+    <img src="../assets/images/logo.png.jpeg" alt="Logo El Glotón" class="logo">
+    <h1>El Glotón</h1>
+    <nav>
+        <img src="../assets/images/cubierto.jpeg" alt="Cliente" style="height: 50px; width: 100px; cursor: pointer;" (click)="navegar('')">
+      
+        <button (click)="navegar('cliente')" [class.active]="botonActivo === 'cliente'">Cliente</button>
+        <button (click)="navegar('empleado')" [class.active]="botonActivo === 'empleado'">Empleado</button>
+        <button (click)="navegar('gerente')" [class.active]="botonActivo === 'gerente'">Gerente</button>
+    </nav>    
+  </header>
+  <router-outlet></router-outlet>
+ 
+
+  <main>
+    <!-- Aquí va el contenido principal de la página -->
+    <p>Contenido de ejemplo debajo de la barra de navegación fija.</p>
+  </main>
+<!---
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h2>Bienvenido a El Glotón</h2>
+      <p>Donde el placer gastronómico se encuentra con la elegancia</p>
+      <a routerLink="menu" class="btn">Explora el Menú</a>
+    </div>
+  </section>
+  <router-outlet></router-outlet>
+-->
+  <P>
+  </P>
+  
+  <footer class="footer">
+    <p>&copy; 2024 El Glotón. Todos los derechos reservados.</p>
+  </footer>
+  
+  
+  
+<!--  
+
+  <nav>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoIo-ycmclVXUyC4GCr4iR-hHnO7MLImvBw&s" alt="Cliente" style="width: 100px; height: auto; cursor: pointer;" (click)="navegar('cliente')">
+      
+      <img src="https://anuncieriodejaneiro.com.br/wp-content/uploads/2018/01/waiter-1015620_960_720.jpg" alt="Empleado" style="width: 100px; height: auto; cursor: pointer;" (click)="navegar('empleado')">
+      
+      <img src="https://media.gettyimages.com/id/165731261/es/vector/gerente-de-restaurante.jpg?s=612x612&w=gi&k=20&c=Xt-UUr7VxQSmUDWAx_uTOVRAt66JlFyTORjbywtTaZM=" alt="Gerente" style="width: 100px; height: auto; cursor: pointer;" (click)="navegar('gerente')">
+  </nav>
+  
+
+
+<nav>
+    <button (click)="navegar('cliente')" style="background-color: transparent; border: none;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhTpJhB0caqkGzIhjoMztt9bn0nDaU3euIA&s" alt="Cliente" style="width: 100px; height: auto;">
+    </button>
+
+    <button (click)="navegar('empleado')" style="background-color: transparent; border: none;">
+        <img src="ruta-de-la-imagen-empleado.jpg" alt="Empleado" style="width: 100px; height: auto;">
+    </button>
+
+    <button (click)="navegar('gerente')" style="background-color: transparent; border: none;">
+        <img src="ruta-de-la-imagen-gerente.jpg" alt="Gerente" style="width: 100px; height: auto;">
+    </button>
+</nav>
+--> 
+

@@ -1,0 +1,37 @@
+<h2>Gestión de Platos  </h2>
+
+<!-- Formulario para agregar un nuevo plato -->
+<form (ngSubmit)="agregarPlato(nuevoPlatoForm)" #nuevoPlatoForm="ngForm">
+  <input type="text" placeholder="URL de la imagen" required [(ngModel)]="nuevoPlato.imagen" name="imagen" />
+
+  <input type="text" placeholder="Nombre" required [(ngModel)]="nuevoPlato.nombre" name="nombre" />
+  <input type="text" placeholder="Descripción" required [(ngModel)]="nuevoPlato.descripcion" name="descripcion" />
+  <input type="number" placeholder="Precio" required [(ngModel)]="nuevoPlato.precio" name="precio" />
+  <button type="submit">Agregar Plato</button>
+</form>
+
+<!-- Botón para regresar al dashboard del gerente -->
+<button (click)="regresarDashboard()" class="btn-dashboard">Regresar al Dashboard</button>
+
+
+<!-- Lista de Platos -->
+<section *ngIf="platos.length > 0">
+  <h3>Lista de Platos</h3>
+  <ul>
+    <li *ngFor="let plato of platos">
+      <img [src]="plato.imagen" alt="{{ plato.nombre }}" style="width: 100px; height: auto;" /> <!-- Mostrar la imagen -->
+      <span class="plato-nombre">{{ plato.nombre }}</span> - 
+      <span class="plato-descripcion">{{ plato.descripcion }}</span> - 
+      <span class="plato-precio">${{ plato.precio }}</span>
+      
+      <div class="button-container">
+        <button class="boton" (click)="deshabilitarPlato(plato.id)" *ngIf="plato.disponible">Deshabilitar Plato</button>
+        <span *ngIf="plato.disponible" class="disponible">(Disponible)</span>
+        <span *ngIf="!plato.disponible" style="color: red;" aria-live="polite">(No disponible)</span>
+
+        <button class="botdisponible" (click)="habilitarPlato(plato.id)" *ngIf="!plato.disponible">Habilitar Plato</button>
+        <!-- editado <span *ngIf="!plato.disponible" class="disponible">(disponible)</span> -->
+      </div>
+    </li>
+  </ul>
+</section>

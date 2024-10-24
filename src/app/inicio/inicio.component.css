@@ -1,0 +1,13 @@
+body {
+    background-image: url('https://st.depositphotos.com/3470617/4869/v/450/depositphotos_48690601-stock-illustration-fast-food-pattern.jpg    '); /* Ruta de la imagen */
+    background-size: cover; /* La imagen cubrirá toda la sección */
+    background-position: center; /* Centra la imagen en la sección */
+    height: 100vh; /* La sección ocupará toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  

@@ -1,0 +1,246 @@
+/* Estilos Globales */
+/* Colores de la paleta */
+:root {
+ /* --dark-green: #2F4F4F;*/
+  --gold: #D4AF37;
+  --deep-orange: #FF8C00;
+  --light-gray: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+/* Estilos generales del body */
+body {
+  font-family: 'Arial', sans-serif;
+    background-image: url('assets/fondo\ de\ pantalla.jfif'); /* Ruta a tu imagen */
+   
+    background-size: cover; /* Cubrir toda la pantalla */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    margin: 0;
+    padding: 0;
+    color: #989b91; /* Color del texto */
+    min-height: 100vh; /* Asegurarse de que cubra toda la altura */
+    background-color: var(--light-gray);
+  color: var(--dark-green);
+}
+
+
+/* Estilo para el logo */
+.logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+/* Estilo para la cabecera que contiene el título y la barra de navegación */
+header {
+  position: fixed;             /* Hace que la cabecera esté fija en la parte superior */
+  top: 0;                      /* Posición superior */
+  left: 0;                     /* Alineada a la izquierda */
+  width: 100%;                 /* Ocupa todo el ancho de la ventana */
+  z-index: 1000;               /* Se asegura de estar por encima del contenido */
+  display: flex;
+  flex-direction: column;      /* Apila el título y la navegación en una columna */
+  align-items: center;         /* Centra horizontalmente el contenido */
+  padding: 10px 0;             /* Espaciado vertical para la cabecera */
+  box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra para dar un efecto de flotante */
+  background-color: var(--dark-green);
+  color: var(--white);
+  background-image: url("assets/images/logo.png.jpeg");
+}
+
+/* Estilo para el título */
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #ff3c00;                /* Color del texto */
+}
+/* Encabezados */
+h1, h2, h3 {
+  color: #ff5733; /* Color principal del restaurante */
+  text-align: center; /* Centrar encabezados */
+}
+/* Estilo para la barra de navegación */
+nav {
+  display: flex;
+  justify-content: center;      /* Centra los botones horizontalmente */
+  gap: 20px;                    /* Espaciado entre los botones */
+  
+}
+
+/* Estilo para los botones de navegación */
+nav button {
+  background-color: #ff3c00;   /* Amarillo soleado */
+  color: white;                 /* Texto blanco */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave para fondo y escala */
+  min-width: 100px;             /* Tamaño mínimo para los botones */
+}
+
+
+/* Espaciado del contenido principal para que no se superponga con la cabecera fija */
+main {
+  margin-top: 100px;            /* Mueve el contenido hacia abajo para evitar superposición */
+}
+
+/* Estilos para la imagen del logo */
+nav img {
+  transition: transform 0.3s;
+  
+}
+
+nav img:hover {
+  transform: scale(1.1); /* Hace que la imagen se agrande al pasar el ratón */
+}
+
+
+/* Estilo para la sección hero */
+.hero {
+  background-color: var(--dark-green);
+  color: var(--white);
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+/* Estilo para los botones en la sección hero */
+.hero .btn {
+  background-color: var(--deep-orange);
+  color: var(--white);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Estilo para la sección del menú */
+.menu-section {
+  padding: 3rem 1rem;
+  padding: 10px 20px;
+  background-color: rgba(180, 178, 53, 0.322);
+  text-align: center;
+  
+}
+
+/* Estilos para la cuadrícula del menú */
+.menu-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 7rem;
+  gap: 20px;                    /* Espaciado entre los botones */
+
+}
+
+/* Estilo para cada ítem del menú */
+.menu-item {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  width: 30%;
+}
+
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+
+
+/* Estilos de la lista de platos */
+ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0; /* Sin espaciado */
+}
+
+li /*lista de enpleados*/{
+  background-color: #fcfdce; /* Fondo blanco para cada plato */
+  border: 3px solid #cec3bf; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 10px 0; /* Margen vertical entre platos */
+  padding: 15px; /* Espaciado interno */
+  transition: transform 0.3s; /* Efecto de hover */
+}
+
+li:hover {
+  transform: scale(1.02); /* Aumentar un poco al pasar el mouse */
+}
+ /* Contenedor del formulario */
+form {
+  max-width: 400px; /* Limita el ancho máximo del formulario a 400px para que no se estire demasiado */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Añade 20px de espacio interno alrededor del contenido del formulario */
+  background-color: #f7f7f742; /* Define un color de fondo gris claro */
+  border-radius: 8px; /* Redondea las esquinas del contenedor del formulario */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera para dar profundidad */
+
+    backdrop-filter: blur(15px);
+    /*background: rgba(255, 255, 255, 0.2);*/
+  }
+  
+/* Botones */
+button {
+  background-color: #ff5733; /* Color del botón */
+  justify-content: center; 
+  color: #fff; /* Color del texto en el botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar cursor */
+  transition: background-color 0.3s; /* Efecto de hover */
+}
+button:hover {
+  background-color: #fa1109; /* Color del botón */
+
+}
+
+/* Estilo de imágenes */
+img {
+  max-width: 70%; /* Ajustar el ancho a 100% */
+  border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+/* Mensaje de no disponibles */
+.no-available {
+  text-align: center;
+  font-size: 18px;
+  color: #666; /* Color gris para el mensaje */
+  margin-top: 20px; /* Espaciado superior */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  h1, h2 {
+      font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  li {
+      margin: 5px 0; /* Reducir margen entre platos en móviles */
+      padding: 10px; /* Reducir espaciado interno */
+  }
+
+  button {
+      width: 100%; /* Botones ocupan el 100% en móviles */
+  }
+}
+
+.footer {
+  background-color: #c49a6c; /* Mismo tono dorado */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  left: 0;         /* Alinea al borde izquierdo */
+  bottom: 0;       /* Alinea al fondo de la ventana */
+  /*width: 60%;     /* Hace que el footer ocupe todo el ancho de la página */
+  height: 50px; /* Ajusta según el tamaño que quieras */
+  font-size: 14px;
+  border-top: 2px solid #8b5e34; /* Línea superior marrón */
+}

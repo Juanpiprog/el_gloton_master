@@ -1,0 +1,66 @@
+
+/* Estilo para la cabecera que contiene el título y la barra de navegación */
+header {
+  
+  position: fixed;            /* Hace que la cabecera esté fija en la parte superior */
+  top: 0;                     /* Posición superior */
+  left: 0;                    /* Alineada a la izquierda */
+  width: 100%;                /* Ocupa todo el ancho de la ventana */
+  z-index: 1000;              /* Se asegura de estar por encima del contenido */
+  display: flex;
+  flex-direction: column;     /* Apila el título y la navegación en una columna */
+  align-items: center;        /* Centra horizontalmente el contenido */
+  padding: 10px 0;            /* Espaciado vertical para la cabecera */
+  box-shadow: 0 4px 8px rgb(251, 255, 23); /* Sombra para dar un efecto de flotante */
+  /*background-color: rgb(0, 255, 98);/* Color de fondo verde lima */
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  backdrop-filter: blur(15px);/*filtrado de la venntana*/
+  background: rgba(255, 191, 54, 0.753);
+  
+}
+
+/* Estilo para el título */
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #ff3c00;                /* Color del texto */
+}
+
+/* Estilo para la barra de navegación */
+nav {
+  display: flex;
+  justify-content: center;    /* Centra los botones horizontalmente */
+  gap: 20px;                  /* Espaciado entre los botones */
+}
+
+/* Estilo para los botones de navegación */
+/* Estilo para los botones de navegación */
+nav button {
+  background-color: #ff6434; /* Color inicial */
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px; /* Ajusta el ancho según sea necesario */
+  height: 50px;
+}
+
+/* Estilo para cuando el botón está activo */
+nav button.active {
+  background-color: #f74a16 !important; /* Color verde al estar activo */
+  color: white; /* Mantiene el texto blanco */
+  transform: scale(1.1); /* Un pequeño efecto de agrandado */
+}
+
+/* Estilo al hacer hover sobre cualquier botón */
+nav button:hover {
+  background-color: #fffb00cc; /* Cambia el color al pasar el ratón */
+  transform: scale(1.1); /* Efecto de agrandado */
+}
+

@@ -1,0 +1,93 @@
+/* Grupo de botones para alternar entre "Registrarse" y "Iniciar sesión" */
+.button-group {
+    display: flex; /* Hace que los botones se alineen en fila mediante un layout flexible */
+    justify-content: center; /* Centra los botones en la pantalla */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px para separar los botones del contenido inferior */
+  }
+  
+  /* Estilo de los botones de alternancia (Registrarse / Iniciar sesión) */
+.toggle-btn {
+    padding: 10px 20px; /* Añade 10px de espacio vertical y 20px horizontal dentro del botón */
+    margin: 0 10px; /* Deja un espacio horizontal de 10px entre cada botón */
+    background-color: #007bff; /* Define el color de fondo azul */
+    color: white; /* El color del texto será blanco */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor a "pointer" para indicar que es clicable */
+    font-size: 16px; /* Establece el tamaño de la fuente a 16px */
+  }
+  
+  
+  .toggle-btn.active {
+    background-color: #0056b3; /* Cambia el color de fondo a un azul más oscuro cuando está activo */
+  }
+
+  .toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Contenedor del formulario */
+.form-container {
+  max-width: 400px; /* Limita el ancho máximo del formulario a 400px para que no se estire demasiado */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Añade 20px de espacio interno alrededor del contenido del formulario */
+  background-color: #f7f7f7; /* Define un color de fondo gris claro */
+  border-radius: 8px; /* Redondea las esquinas del contenedor del formulario */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera para dar profundidad */
+
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Grupo de elementos del formulario (etiqueta y campo) */
+.form-group {
+    margin-bottom: 15px; /* Añade un margen inferior de 15px para separar los grupos de campos */
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Estilo para los campos de entrada del formulario */
+.form-control {
+    width: 95%; /* El campo de entrada ocupará el 100% del ancho disponible */
+    padding: 10px; /* Añade 10px de espacio interno para que el campo sea más grande */
+    font-size: 16px; /* El texto dentro del campo de entrada será de 16px */
+    border: 1px solid #ccc; /* Define un borde gris claro */
+    border-radius: 4px; /* Redondea las esquinas del campo de entrada */
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .error {
+    color: red; /* El color del texto de error será rojo */
+    font-size: 14px; /* Define el tamaño del texto de error en 14px */
+    margin-top: 5px; /* Añade un pequeño margen superior de 5px para separarlo del campo de entrada */
+  }
+  
+  .btn {
+    width: 100%; /* El botón ocupará el 100% del ancho del contenedor del formulario */
+    background-color: #28a745; /* El botón tendrá un color de fondo verde */
+    color: white; /* El color del texto será blanco */
+    padding: 10px; /* Añade 10px de espacio interno para agrandar el botón */
+    font-size: 16px; /* Define el tamaño del texto del botón a 16px */
+    border: none; /* Elimina los bordes del botón */
+    border-radius: 4px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor a "pointer" cuando el ratón está sobre el botón */
+  }
+  
+  .btn:disabled {
+    background-color: #ccc; /* El color de fondo será gris claro, indicando que no es clicable */
+    cursor: not-allowed; /* Cambia el cursor a "no permitido" para indicar que está deshabilitado */
+  }
+  
+  .btn:hover:enabled {
+    background-color: #0056b3;
+  }
+  

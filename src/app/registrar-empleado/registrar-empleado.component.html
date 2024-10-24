@@ -1,0 +1,16 @@
+<h2>Registrar Empleado</h2>
+<form (submit)="registrarEmpleado()">
+  <label for="codigo">Código de Empleado:</label>
+  <input id="codigo" [(ngModel)]="codigo" name="codigo" required>
+  
+  <label for="contrasena">Contraseña:</label>
+  <input id="contrasena" [(ngModel)]="contrasena" name="contrasena" type="password" required>
+  
+  <label for="direccion">Dirección:</label>
+  <input id="direccion" [(ngModel)]="direccion" name="direccion" required>
+  
+  <label for="telefono">Teléfono:</label>
+  <input id="telefono" [(ngModel)]="telefono" name="telefono" required>
+  
+  <button type="submit">Registrar</button>
+</form>

@@ -1,0 +1,31 @@
+<div class="gestionar-pedidos">
+  <h2>Gestión de Pedidos</h2>
+
+  <div *ngIf="pedidos.length === 0">
+    <p>No hay pedidos pendientes.</p>
+  </div>
+
+  <ul *ngIf="pedidos.length > 0">
+    <li *ngFor="let pedido of pedidos">
+      <div class="pedido-item">
+        <h3>ID Pedido: {{ pedido.id_pedido }}</h3>
+        <p><strong>Cliente ID:</strong> {{ pedido.cliente_id }}</p>
+        <p><strong>Platos:</strong></p>
+        <ul>
+          <li *ngFor="let plato of pedido.platos">
+            {{ plato.nombre }} - Precio: {{ plato.precio | currency:'USD':'symbol':'1.2-2' }}
+          </li>
+        </ul>
+        <p><strong>Estado:</strong> {{ pedido.estado }}</p>
+        <button (click)="cambiarEstado(pedido, 'Preparando')"
+                [disabled]="pedido.estado === 'Preparando' || pedido.estado === 'Entregado'">
+          Preparar
+        </button>
+        <button (click)="cambiarEstado(pedido, 'Entregado')"
+                [disabled]="pedido.estado === 'Entregado'">
+          Entregar
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
